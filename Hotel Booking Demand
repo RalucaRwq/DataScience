@@ -5,11 +5,28 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+import csv
 
 # Read file with Pandas using read_csv()
 hotel = pd.read_csv("hotel_bookings.csv")
-hotel.head()  # head() - used to get the first n rows. default is 5
+# hotel.head()  # head() - used to get the first n rows. default is 5
 
 # Getting more info about the data
-hotel.info()
+#hotel.info()
 
+# DATA CLEANING
+# finding missing values
+def missing_values(df):
+    total_missing = df.isnull().sum().sort_values(ascending=False)
+
+    total_missing = total_missing[total_missing.values != 0]  #Verify that there are missing values. Values = specific property of df
+    per = np.round(total_missing.values*100.00/len(df), 2)  # compute the percentage of missing values from the total missing values
+    dataframe = pd.DataFrame(total_missing, columns=['number_of_missing_values']) # labeling the column
+
+    return (dataframe.assign(percentage=per))
+
+my_new_data = missing_values(hotel)
+my_csv = open('new.csv', 'w+')
+with my_csv:
+    write = csv.writer(my_csv)
+    write.writerows(my_new_data)
