@@ -2,6 +2,7 @@ text = "This is my first Data Science project"
 
 print(text)
 
-""" *** git push
-
+""" *** git add
+    *** git commit -m "This is comment"
+    *** git push
 """
