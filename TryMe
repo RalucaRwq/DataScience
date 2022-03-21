@@ -1,0 +1,7 @@
+text = "This is my first Data Science project"
+
+print(text)
+
+""" *** git push
+
+"""
