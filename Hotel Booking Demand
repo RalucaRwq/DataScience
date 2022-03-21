@@ -1,0 +1,15 @@
+# Hotel Booking Demand project
+# LET'S GO !
+
+# Import relevant packages
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Read file with Pandas using read_csv()
+hotel = pd.read_csv("hotel_bookings.csv")
+hotel.head()  # head() - used to get the first n rows. default is 5
+
+# Getting more info about the data
+hotel.info()
+
