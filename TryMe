@@ -8,3 +8,9 @@ print(text)
     
 pull request and push
 """
+
+import pandas as pd
+my_list = ["one", "two", "three"]
+df = pd.DataFrame(my_list)
+new = df.isnull().sum()
+print(new)
