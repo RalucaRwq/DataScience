@@ -5,4 +5,6 @@ print(text)
 """ *** git add
     *** git commit -m "This is comment"
     *** git push
+    
+pull request and push
 """
